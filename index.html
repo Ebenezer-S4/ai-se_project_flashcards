@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>learning website</title>
+    <meta name="author" content="Ebenezer Andrews Sarpong" />
+    <meta
+      name="description"
+      content="A website with study materials and learning resources"
+    />
+    <meta
+      name="keywords"
+      content="flashcards, learning materials, studying, education"
+    />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__link" href="./index.html">Flash Cards</a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li>
+            <a class="nav__link" href="#">My Decks</a>
+          </li>
+          <li>
+            <a class="nav__link" href="#">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-content">
+      <section class="decks" id="home">
+        <h2 class="decks__title">My Decks</h2>
+        <template id="deck-template">
+          <li class="deck deck_color_green">
+            <a class="deck__link" href="#"></a>
+            <h3 class="deck__title"></h3>
+              <div class="deck__row">
+                <p class="deck__count"></p>
+                <button class="deck__delete-btn" type="button" aria-label="delete this deck">
+                </button>
+              </div>
+          </li>
+        </template>
+        <ul class="decks__list">
+          
+          <li class="decks__new-deck-item">
+            <button class="decks__new-deck-btn" type="button">
+              + New Deck
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="carousel" id="carousel">
+        <h2 class="carousel__title"></h2>
+        
+        <button class="carousel__btn carousel__btn_type_left previous-btn" type="button"></button>
+        
+        <div class="carousel__card">
+          <p class="carousel__card-text" ></p>
+        </div>
+        <button class="carousel__btn carousel__btn_type_right next-btn" type="button"></button>
+
+        <button class="carousel__btn carousel__btn_type_flip carousel__flip-btn" type="button">
+          <img src="./assets/images/flip.svg" alt="Flip" /></button>
+      </section>
+      <section class="not-found" id="not-found">
+      <h2 class="not-found__title">404</h2>
+      <p class="not-found__text">Page not found</p>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2026 Around the U.S.</p>
+    </footer>
+    <script src="./assets/js/index.js" type="module"></script>
+  </body>
+</html>
