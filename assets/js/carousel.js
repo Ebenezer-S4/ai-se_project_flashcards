@@ -11,14 +11,21 @@ renderCarouselView(deck) {
     const card = deck.cards[currentCardIndex];
 
     const carouselTitle = carousel.querySelector(".carousel__title");
-    carouselTitle.textContent = `${deck.name} ${currentCardIndex + 1} / ${deck.cards.length}`;
+    carouselTitle.textContent = deck.cards.length
+        ? `${deck.name} ${currentCardIndex + 1} / ${deck.cards.length}`
+        : `${deck.name} 0 / 0`;
 
     const cardElement = carousel.querySelector(".carousel__card");
     const cardText = carousel.querySelector(".carousel__card-text");
     removeColorClasses(cardElement);
     
     cardElement.classList.add(`carousel__card_color_${hexToString(deck.color) || "green"}`);
-    
+
+    if (deck.cards.length === 0) {
+        cardText.textContent = "No flashcards in this deck.";
+        return;
+    }
+
     if (showingQuestion) {
         cardText.textContent = card.question;
         cardElement.classList.remove("carousel__card_color_white");

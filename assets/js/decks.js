@@ -773,7 +773,7 @@ if (originalGitBasics && !decks.some(deck => deck.id === originalGitBasics.id)) 
  * @returns {object|undefined} The deck object if found, undefined otherwise
  */
 function getDeckbyID(deckId) {
-  return decks.find((deck) => deck.id === deckId);
+  return decks.find((deck) => String(deck.id) === String(deckId));
 }
 
 export { decks, getDeckbyID };
