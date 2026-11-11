@@ -1,4 +1,4 @@
-.deck {
+.card {
   box-sizing: border-box;
   width: 325px;
   height: 205px;
@@ -10,37 +10,37 @@
   position: relative;
 }
 
-.deck__link {
+.card__link {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.deck_color_green {
+.card_color_green {
   background-color: #64d583;
 }
 
-.deck_color_blue {
+.card_color_blue {
   background-color: #91a8f9;
 }
 
-.deck_color_pink {
+.card_color_pink {
   background-color: #ee92d7;
 }
 
-.deck_color_purple {
+.card_color_purple {
   background-color: #aa8ef0;
 }
 
-.deck_color_orange {
+.card_color_orange {
   background-color: #ee955e;
 }
 
-.deck_color_yellow {
+.card_color_yellow {
   background-color: #f5d770;
 }
 
-.deck__button {
+.card__button {
   padding: 10px 20px;
   background-color: #000;
   color: #fff;
@@ -51,7 +51,7 @@
   border: none;
   border-radius: 20px;
 }
-.deck__row {
+.card__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,14 +59,14 @@
   width: 100%;
 }
 
-.deck__count {
+.card__count {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
 }
 
-.deck {
+.card {
   box-sizing: border-box;
   width: 100%;
   max-width: 325px;
@@ -78,14 +78,14 @@
   border-radius: 20px;
 }
 
-.deck__title {
+.card__title {
   margin: 0;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
 }
 
-.deck__delete-btn {
+.card__delete-btn {
   width: 24px;
   height: 24px;
   padding: 0;
@@ -100,15 +100,15 @@
   z-index: 2;
 }
 
-.deck__delete-btn:hover {
+.card__delete-btn:hover {
   opacity: 1;
 }
 
-.deck__button:hover {
+.card__button:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }
 
-.deck__button:hover {
+.card__button:hover {
   opacity: 1;
 }

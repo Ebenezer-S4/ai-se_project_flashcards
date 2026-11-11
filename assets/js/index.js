@@ -3,8 +3,8 @@ import { renderCarouselView } from "./carousel.js";
 import {  hexToString  } from "./colors.js";
 
 const deckTemplate = document.querySelector("#deck-template");
-const decksList = document.querySelector(".decks__list");
-const newDeckBtn = document.querySelector(".decks__new-deck-btn");
+const decksList = document.querySelector(".gallery__list");
+const newDeckBtn = document.querySelector(".gallery__new-card-btn");
 
 const homeSelection = document.querySelector("#home");
 const notFoundSelection = document.querySelector("#not-found");
@@ -12,15 +12,15 @@ const notFoundSelection = document.querySelector("#not-found");
 function createDeckEl(item) {
    
     const template = deckTemplate.content.cloneNode(true);
-    const deckEl = template.querySelector(".deck");
-    const titleEl = template.querySelector(".deck__title");
-    const countEl = template.querySelector(".deck__count");
-    const deleteBtn = template.querySelector(".deck__delete-btn");
-    const deckLink = template.querySelector(".deck__link");
+    const deckEl = template.querySelector(".card");
+    const titleEl = template.querySelector(".card__title");
+    const countEl = template.querySelector(".card__count");
+    const deleteBtn = template.querySelector(".card__delete-btn");
+    const deckLink = template.querySelector(".card__link");
 
     deckEl.dataset.id = item.id;
     const colorName = hexToString(item.color);
-    deckEl.classList.add(`deck_color_${colorName}`);
+    deckEl.classList.add(`card_color_${colorName}`);
     deckLink.href = `#carousel/${item.id}`;
 
     titleEl.textContent = item.name;
