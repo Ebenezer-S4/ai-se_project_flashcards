@@ -1,0 +1,101 @@
+.carousel {
+  width: 568px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__title {
+  width: 100%;
+  margin: 0 0 32px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #1a1a1a80;
+}
+
+.carousel__card {
+  box-sizing: border-box;
+  width: 440px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #64d583;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__card_color_green {
+  background-color: #64d583;
+}
+
+.carousel__card_color_blue {
+  background-color: #91a8f9;
+}
+
+.carousel__card_color_pink {
+  background-color: #ee92d7;
+}
+
+.carousel__card_color_purple {
+  background-color: #aa8ef0;
+}
+
+.carousel__card_color_orange {
+  background-color: #ee955e;
+}
+
+.carousel__card_color_yellow {
+  background-color: #f5d770;
+}
+
+.carousel__card_color_white {
+  background-color: #fff;
+}
+
+.carousel__card-text {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.carousel__btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.carousel__btn_type_left {
+  margin-right: 20px;
+  background-image: url("../images/left.svg");
+}
+
+.carousel__btn_type_right {
+  margin-left: 20px;
+  background-image: url("../images/right.svg");
+}
+
+.carousel__btn_type_flip {
+  margin-top: 24px;
+  background-image: url("../images/flip.svg");
+}
+
+.carousel__btn_disabled {
+  opacity: 20%;
+  cursor: default;
+}
+
+.carousel__btn:not(.carousel__btn_disabled):hover {
+  opacity: 100%;
+  cursor: pointer;
+}

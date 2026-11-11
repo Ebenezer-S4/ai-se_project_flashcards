@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,10 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=inter:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     /> -->
-    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
-
   <body class="page">
     <header class="header">
       <h1 class="header__title">
@@ -47,15 +45,17 @@
           <li class="deck deck_color_green">
             <a class="deck__link" href="#"></a>
             <h3 class="deck__title"></h3>
-              <div class="deck__row">
-                <p class="deck__count"></p>
-                <button class="deck__delete-btn" type="button" aria-label="delete this deck">
-                </button>
-              </div>
+            <div class="deck__row">
+              <p class="deck__count"></p>
+              <button
+                class="deck__delete-btn"
+                type="button"
+                aria-label="delete this deck"
+              ></button>
+            </div>
           </li>
         </template>
         <ul class="decks__list">
-          
           <li class="decks__new-deck-item">
             <button class="decks__new-deck-btn" type="button">
               + New Deck
@@ -65,20 +65,30 @@
       </section>
       <section class="carousel" id="carousel">
         <h2 class="carousel__title"></h2>
-        
-        <button class="carousel__btn carousel__btn_type_left previous-btn" type="button"></button>
-        
-        <div class="carousel__card">
-          <p class="carousel__card-text" ></p>
-        </div>
-        <button class="carousel__btn carousel__btn_type_right next-btn" type="button"></button>
 
-        <button class="carousel__btn carousel__btn_type_flip carousel__flip-btn" type="button">
-          <img src="./assets/images/flip.svg" alt="Flip" /></button>
+        <button
+          class="carousel__btn carousel__btn_type_left previous-btn"
+          type="button"
+        ></button>
+
+        <div class="carousel__card">
+          <p class="carousel__card-text"></p>
+        </div>
+        <button
+          class="carousel__btn carousel__btn_type_right next-btn"
+          type="button"
+        ></button>
+
+        <button
+          class="carousel__btn carousel__btn_type_flip carousel__flip-btn"
+          type="button"
+        >
+          <img src="./assets/images/flip.svg" alt="Flip" />
+        </button>
       </section>
       <section class="not-found" id="not-found">
-      <h2 class="not-found__title">404</h2>
-      <p class="not-found__text">Page not found</p>
+        <h2 class="not-found__title">404</h2>
+        <p class="not-found__text">Page not found</p>
       </section>
     </main>
     <footer class="footer">
