@@ -1,18 +1,15 @@
 import { decks, getDeckbyID } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colors.js";
+import { renderDeckView } from "./deck-view.js";
 
 const deckTemplate = document.querySelector("#deck-template");
-const flashcardTemplate = document.querySelector("#flashcard-template");
 const homeSelection = document.querySelector("#home");
 const deckView = document.querySelector("#deck-view");
 const carousel = document.querySelector("#carousel");
 const notFoundSelection = document.querySelector("#not-found");
 const homeDecksList = homeSelection.querySelector(".gallery__list");
-const flashcardsList = deckView.querySelector(".gallery__list");
-const deckTitle = deckView.querySelector(".gallery__title");
 const newDeckBtn = homeSelection.querySelector(".gallery__new-card-btn");
-const practiceBtn = deckView.querySelector(".gallery__practice-btn");
 
 function saveDecks() {
   localStorage.setItem("flashcards-decks", JSON.stringify(decks));
@@ -53,62 +50,6 @@ function renderDeckEl(deck) {
 function renderHomeView() {
   homeDecksList.querySelectorAll(".card").forEach((card) => card.remove());
   decks.forEach(renderDeckEl);
-}
-
-function createFlashcardEl(flashcard, deck) {
-  const template = flashcardTemplate.content.cloneNode(true);
-  const flashcardEl = template.querySelector(".card");
-  const titleEl = template.querySelector(".card__title");
-  const flipBtn = template.querySelector(".card__flip-btn");
-  const deleteBtn = template.querySelector(".card__delete-btn");
-  let showingQuestion = true;
-
-  flashcardEl.classList.add(
-    `card_color_${hexToString(deck.color) || "green"}`,
-  );
-  titleEl.textContent = flashcard.question;
-
-  flipBtn.addEventListener("click", () => {
-    showingQuestion = !showingQuestion;
-    titleEl.textContent = showingQuestion
-      ? flashcard.question
-      : flashcard.answer;
-  });
-
-  deleteBtn.addEventListener("click", () => {
-    const flashcardIndex = deck.cards.findIndex(
-      (item) => item.id === flashcard.id,
-    );
-
-    if (flashcardIndex !== -1) {
-      deck.cards.splice(flashcardIndex, 1);
-      saveDecks();
-      flashcardEl.remove();
-      const deckEl = homeDecksList.querySelector(
-        `.card[data-id="${deck.id}"]`,
-      );
-      if (deckEl) {
-        deckEl.querySelector(".card__count").textContent =
-          `${deck.cards.length} Cards`;
-      }
-    }
-  });
-
-  return flashcardEl;
-}
-
-function renderDeckView(deck) {
-  deckTitle.textContent = deck.name;
-  flashcardsList.querySelectorAll(".card").forEach((card) => card.remove());
-  const newCardItem = flashcardsList.querySelector(".gallery__new-deck-item");
-
-  deck.cards.forEach((flashcard) => {
-    flashcardsList.insertBefore(createFlashcardEl(flashcard, deck), newCardItem);
-  });
-
-  practiceBtn.onclick = () => {
-    window.location.hash = `#carousel/${deck.id}`;
-  };
 }
 
 function hideViews() {
