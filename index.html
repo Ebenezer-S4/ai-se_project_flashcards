@@ -63,6 +63,36 @@
           </li>
         </ul>
       </section>
+      <section class="gallery" id="deck-view">
+        <div class="gallery__header">
+          <h2 class="gallery__title"></h2>
+          <button class="gallery__practice-btn" type="button">Practice</button>
+        </div>
+        <template id="flashcard-template">
+          <li class="card">
+            <h3 class="card__title"></h3>
+            <div class="card__row">
+              <button
+                type="button"
+                class="card__flip-btn"
+                aria-label="Flip flashcard"
+              ></button>
+              <button
+                type="button"
+                class="card__delete-btn"
+                aria-label="Delete flashcard"
+              ></button>
+            </div>
+          </li>
+        </template>
+        <ul class="gallery__list">
+          <li class="gallery__new-deck-item">
+            <button class="gallery__new-card-btn" type="button">
+              + New Card
+            </button>
+          </li>
+        </ul>
+      </section>
       <section class="carousel" id="carousel">
         <h2 class="carousel__title"></h2>
 
