@@ -90,18 +90,6 @@ function router() {
   notFoundSelection.style.display = "block";
 }
 
-const GitBasics = decks.find((deck) => deck.id === "git-basics");
-
-if (GitBasics) {
-  const savedDecks = JSON.parse(
-    localStorage.getItem("flashcards-decks") || "[]",
-  );
-  if (!savedDecks.some((deck) => deck.id === GitBasics.id)) {
-    savedDecks.push(GitBasics);
-    localStorage.setItem("flashcards-decks", JSON.stringify(savedDecks));
-  }
-}
-
 newDeckBtn.addEventListener("click", () => {
   const newDeck = {
     id: Date.now(),

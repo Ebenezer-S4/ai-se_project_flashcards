@@ -74,3 +74,45 @@
   background-color: #c5c5c5;
   color: #1a1a1a;
 }
+
+@media (max-width: 600px) {
+  #home .gallery__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  #home .gallery__new-deck-item {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 10;
+    padding: 24px 20px 16px;
+    background: linear-gradient(to bottom, transparent, #ececec 35%);
+  }
+
+  #home .gallery__new-card-btn {
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  #home .gallery__new-card-btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  #home .gallery__list > .card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 7 / 4;
+  }
+}
