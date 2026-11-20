@@ -63,6 +63,11 @@ function router() {
 
   hideViews();
 
+  const isAboutPage = hash === "#about";
+  document.querySelector("#about").hidden = !isAboutPage;
+
+  if (isAboutPage) return;
+
   if (hash === "#home" || hash === "" || hash === "#") {
     renderHomeView();
     homeSelection.style.display = "flex";

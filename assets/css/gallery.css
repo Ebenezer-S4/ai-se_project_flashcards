@@ -76,15 +76,62 @@
 }
 
 @media (max-width: 600px) {
-  #home .gallery__list {
+  #home .gallery__title,
+  #deck-view .gallery__header {
+    margin-bottom: 16px;
+  }
+  #home .gallery__list,
+  #deck-view .gallery__list {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     width: 100%;
   }
 
+  #deck-view {
+    padding-bottom: 84px;
+  }
+
+  #deck-view .gallery__new-deck-item {
+    position: fixed;
+    inset: auto 0 64px;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    pointer-events: none;
+    padding: 24px 20px 16px;
+    background: linear-gradient(to bottom, transparent, #ececec 35%);
+  }
+
+  #deck-view .gallery__new-card-btn {
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 16px;
+    pointer-events: auto;
+  }
+
+  #deck-view .gallery__practice-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 11;
+    box-sizing: border-box;
+    width: calc((100% - 52px) / 2);
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
   #home .gallery__new-deck-item {
     position: fixed;
-    inset: auto 0 0;
+    inset: auto 0 64px;
     z-index: 10;
     padding: 24px 20px 16px;
     background: linear-gradient(to bottom, transparent, #ececec 35%);
@@ -108,7 +155,8 @@
     color: #fff;
   }
 
-  #home .gallery__list > .card {
+  #home .gallery__list > .card,
+  #deck-view .gallery__list > .card {
     box-sizing: border-box;
     width: 100%;
     max-width: none;

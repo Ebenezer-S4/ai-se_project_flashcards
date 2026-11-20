@@ -75,6 +75,11 @@
   opacity: 0.5;
 }
 
+.carousel__card_color_white .carousel__card-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 .carousel__btn_type_left {
   margin-right: 20px;
   background-image: url("../images/left.svg");
@@ -101,19 +106,38 @@
 }
 
 @media (max-width: 600px) {
+  .carousel__title {
+    flex-basis: 100%;
+    order: -2;
+  }
+
   .carousel__card {
-    flex: 0 0 calc(100% - 88px);
+    box-sizing: border-box;
+    flex: 0 0 100%;
     min-width: 0;
+    padding: 88px;
+    height: 420px;
+    order: -1;
   }
 
   .carousel__btn_type_left,
+  .carousel__btn_type_flip,
   .carousel__btn_type_right {
     box-sizing: border-box;
     flex: 0 0 44px;
-    margin: 0;
+    margin: 16px 0 0;
   }
 
+  .carousel__btn_type_flip {
+    order: 1;
+    margin-inline: auto;
+  }
+
+  .carousel__btn_type_right {
+    order: 2;
+  }
   .carousel {
+    flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
     min-width: 0;
